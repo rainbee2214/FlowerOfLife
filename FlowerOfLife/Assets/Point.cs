@@ -3,25 +3,18 @@ using System.Collections;
 
 public class Point : MonoBehaviour 
 {
-    public float r;
-    public float x;
-    public float y;
+    public float r, x, y;
+    // x = rcos(theta)
+    // y = rsin(theta)
 
     public float a = 1, b = 1, c = 0, d = 0;
+
     public float theta;
     public Vector2 position;
     public string currentFunction;
     public float speed = 1f;
 
-    // x = rcos(theta)
-    // y = rsin(theta)
-
     float speedRate = 0.005f;
-
-	void Start () 
-    {
-	
-	}
 
 	void Update () 
     {
@@ -34,11 +27,6 @@ public class Point : MonoBehaviour
         position.y = y;
         transform.position = position;
 	}
-
-    float function(float theta)
-    {
-        return function(theta, "constant");
-    }
 
     float function(float theta, string function)
     {
