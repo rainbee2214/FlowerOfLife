@@ -16,6 +16,12 @@ public class Point : MonoBehaviour
 
     float speedRate = 0.005f;
 
+    public void ChangeSpeed(float newSpeed)
+    {
+        speed = newSpeed;
+        Debug.Log("Change speed");
+    }
+
 	void Update () 
     {
         theta += speed*speedRate;

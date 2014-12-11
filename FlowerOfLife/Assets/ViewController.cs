@@ -15,10 +15,7 @@ public class ViewController : MonoBehaviour
     {
         if (switchBackground) 
         {
-            switchBackground = false;
-            color = !color;
-
-            camera.backgroundColor = getColor(color);
+            SwitchBackground();
         }
 
         if (zoomIn)
@@ -38,14 +35,22 @@ public class ViewController : MonoBehaviour
         return color ? Color.black : Color.white;
     }
 
-    void ZoomIn()
+    public void SwitchBackground()
+    {
+        switchBackground = false;
+        color = !color;
+
+        camera.backgroundColor = getColor(color);
+    }
+
+    public void ZoomIn()
     {
         camera.orthographicSize--;
         if (camera.orthographicSize < minZoomSize) camera.orthographicSize = minZoomSize;
 
     }
 
-    void ZoomOut()
+    public void ZoomOut()
     {
         camera.orthographicSize++;
         if (camera.orthographicSize > maxZoomSize) camera.orthographicSize = maxZoomSize;
